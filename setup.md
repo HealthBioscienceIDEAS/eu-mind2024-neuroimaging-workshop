@@ -41,7 +41,8 @@ The following committee members have been developing and testing the content and
 ### Acknowledgements
 These lessons are developed as part of the [Health and Biosciences IDEAS](https://healthbioscienceideas.github.io) project, which is a training initiative funded by [UKRI Innovation Scholars](https://www.ukri.org/opportunity/innovation-scholars-data-science-training-in-health-bioscience/) (MR/V03863X/1)
 
-This work was supported by a grant from the Alzheimer's Association (IGPCC-D-1329693 and support from [Fondacion Alzheimer](https://www.fondation-alzheimer.org/).
+This work was supported by a grant from the Alzheimer's Association (IGPCC-D-1329693)
+and support from [Fondacion Alzheimer](https://www.fondation-alzheimer.org/).
 
 The data for this course comes from the [Open Access Series of Imaging Studies](https://www.oasis-brains.org/)(OASIS) dataset. Many thanks to Pamela LaMontaigne and the OASIS team as Washington University for their support with the data.
 
