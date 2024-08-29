@@ -79,7 +79,7 @@ over this [[additional tutorial]](./command-line.md).
 
 If you are not sure how to use a command, there are multiple ways of getting help:
 
-1. **Using the man command** Just type `man` in front of it to get the *manual entry*.
+- **Using the man command** Just type `man` in front of it to get the *manual entry*.
 
     ```bash
     man ls
@@ -87,7 +87,7 @@ If you are not sure how to use a command, there are multiple ways of getting hel
     man more
     man less
     ```
-2. **Use the -h option** Many commands will provide more information about how to use
+- **Use the -h option** Many commands will provide more information about how to use
 a command if you type `-h` or `--help` after the command. This usually produces the
 *usage statement*. Let's take a look at what happens when we want to get more help
 with the `dcm12niix` command mentioned above to convert a DICOM file set to a Nifti.
@@ -140,12 +140,14 @@ with the `dcm12niix` command mentioned above to convert a DICOM file set to a Ni
       dcm2niix -o "~/dir with spaces/dir" ~/dicomdir
      Example output filename: 'ID123_1_T1_mprage.nii.gz'
     ```
-3. **Search for help on the command online** - this can be helpful if you want more information, tutorials or if for some reason
+- **Search for help on the command online** - this can be helpful if you want more information, tutorials or if for some reason
 the manual entry has not been installed. 
 
 ::::::::::::::::::::
 
-Type 
+Now let's look at some of the metadata for one of these images to better
+understand what information they contain and how they are structured. Type
+the following command: 
 ```bash
 fslhd sub-OAS30015_T1w.nii.gz
 ```
@@ -401,6 +403,9 @@ while fsleyes continues to run. If you had not made `fsleyes` run in the
 background (i.e., if you had just typed `fsleyes` without the `&` at the end) 
 then you would not be able to run any additional commands in that terminal until you 
 either exited or killed `fsleyes` (although you could still type things, but they would not run).
+
+**In most instances, we would recommend using the `&` at the end of the 
+fsleyes command**
 :::::::::::::::::
 
 ### Basic image viewing
@@ -717,7 +722,7 @@ Let's take two imaging modalities from a different participant:
 Now let's have a look at them in FSLeyes:
 
 ```bash
-fsleyes sub-OAS30003_T1w.nii.gz sub-OAS30003_FLAIR.nii.gz
+fsleyes sub-OAS30003_T1w.nii.gz sub-OAS30003_FLAIR.nii.gz &
 ```
 
 Change the intensity range for both images to be between 0 and 1000.
