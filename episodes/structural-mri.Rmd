@@ -62,9 +62,10 @@ terminal icon. This will open a terminal window that you will use to type
 commands
 ![](fig/aic_smri_launch_terminal.png){alt="Launch the terminal"}
  
-From the terminal window, type `fsleyes` to open up the image and have a 
-look around.
-![](fig/aic_smri_fsleyes.png){alt="Open FSLeyes"}
+To get started, open up FSLeyes from the terminal window
+```bash
+fsleyes & 
+``` 
 
 Now we choose the file `sub-OAS_30003_T1w.nii` by going to the File menu and 
 choosing the Add Image command
@@ -111,7 +112,10 @@ simultaneously. Follow the steps below to obtain bias-corrected images and
 tissue probability maps. 
 
 ### Bias Correction and Segmenation Steps
-1. Type `spm pet` to launch SPM 
+1. Launch SPM
+   ```bash
+   spm pet &
+   ```
 ![](fig/aic_smri_terminal_window.png){alt="Launch SPM"}
 1. SPM will then create a number of windows. You want to look at the Main Menu
 Window that has all of the buttons.
@@ -158,8 +162,10 @@ visualize the outputs from SPM Segment and make sure that the bias correction
 and segmentation have worked. 
 
 ### Bias correction
-1. Use `fsleyes` again and open up the original image `sub-OAS30003_T1w.nii` 
-as you did at the start of the session.
+1. Open up the original image `sub-OAS30003_T1w.nii` using FSLeyes
+   ```bash
+   fsleyes sub-OAS30003_T1w.nii &
+   ```
 2. Change the image lookup table to `NIH [Brain colors]` 
 ![](fig/aic_smri_fsleyes_selectnih.png){alt="FSL eyes with NIH colormap"}
 3. Then change the image minimum to 40 and the maximum to 600. This means that 
