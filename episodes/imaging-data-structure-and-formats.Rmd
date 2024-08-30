@@ -406,6 +406,12 @@ either exited or killed `fsleyes` (although you could still type things, but the
 
 **In most instances, we would recommend using the `&` at the end of the 
 fsleyes command**
+
+This is because fsleyes tends to be used interactively and may be open 
+indefinitely, which means you won't be able to run commands for a while if 
+it is not ran in the background. For commands that run near instantaneously,
+there is no need to put the ampersand. In the following tutorials,
+we have tried to make it clear when a job should be run in the background.
 :::::::::::::::::
 
 ### Basic image viewing
