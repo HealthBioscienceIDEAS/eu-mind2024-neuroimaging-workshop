@@ -52,8 +52,9 @@ Notably, no smoothing was applied during the PET reconstruction.
 unprocessed PET NIfTI images and data `/home/as2-streaming-user/data/PET_Imaging`.
 1. Use `ls` to view the contents of this directory
 1. Use `cd` to change your working directory to the following location: 
+
     ```bash
-    cd /home/as2-streaming-user/data/PET_Imaging/UnprocessedData
+    cd /home/as2-streaming-user/data/PETImaging/UnprocessedData
     ```
     
 ### View PET metadata
@@ -94,7 +95,20 @@ if we wanted to calculate the standard uptake value
 Now close the .json files in `gedit`.
 
 ### View 4D PET data
-1. Open `sub001_pib.nii` using `fsleyes`.
+1. Make sure you are in the right working directory
+
+    ```bash
+    cd /home/as2-streaming-user/data/PET_Imaging/UnprocessedData
+    ```
+
+1. Open `sub001_pib.nii` using FSLeyes
+
+   ```bash
+   fsleyes -ms sub001_pib.nii &
+   ```
+   
+   THe `-ms` option provides better viewing of 4D image data on this VM. You 
+   should add this whenever working with dynamic PET data, DWI or fMRI data.
 1. Set the minimum threshold to 0 and the maximum threshold to 30,000 Bq/mL
 1. You are currently viewing individual PET frames that have not been 
 denoised in any way. Notice the high noise level in the individual PET 
@@ -134,7 +148,7 @@ reference the FrameTimeStart and FrameTimeEnd fields in the .json file to
 determine which frames correspond to 0-20 min and 50-70 min postinjection.
 
 ### Using ImCalc to Sum Frames
-1. Open SPM12 by typing `spm pet` in the command line.
+1. Open SPM12 by typing `spm pet &` in the command line.
 1. Select the `ImCalc` module.
     ![Start ImCalc](fig/aic_pet_imcalc_start.png){alt="SPM ImCalc module"}
 1. For each variable in the GUI, you will need to specify values using the `Specify` button.
@@ -192,7 +206,9 @@ mid-sagittal. You can similarly see differences in intensity between much of
 the cortex and the cerebellar GM, a common reference region used for amyloid 
 PET as it typically has negligible specific binding in the cerebellum.
 
-    **Do you think this person is amyloid positive or negative?**
+   :::::::::::::::::: discussion
+   **Do you think this person is amyloid positive or negative?**
+   ::::::::::::::::::
 1. Repeat the above steps to generate the SUM image for the early frame data. 
 Make sure to remove the previous volumes before adding the new volume in the 
 Input Images. You will need to use the first seven frames corresponding to the 
@@ -231,10 +247,9 @@ inputs:
 time)
    * `FWHM` – 4 4 4 (this specified an isotropic 4 mm full-width half Gaussian
 smoothing kernel)
-  * `Data Type` – Same
-  * `Implicit Mask` – No
-  * `Filename prefix` – ‘s’ (this prepends an “s” onto the filename to 
-  indicate the newly created image was smoothed)
+   * `Data Type` – Same
+   * `Implicit Mask` – No
+   * `Filename prefix` – ‘s’ (this prepends an “s” onto the filename to indicate the newly created image was smoothed)
 1. Press the green play button to run the smoothing module.
 1. Close the SPM batch editor.
 1. View the resultant smoothed images in FSL (the ones with an ‘s’ prefix in 
@@ -258,12 +273,12 @@ max window level to 0 and 30,000 respectively. Select the `Hot [Brain colours]` 
 for the PET image. Reduce the Opacity slider down until you can see both the MRI in the
 background and the PET image in the foreground.
 1. Notice that the images are not aligned. Thus, we cannot yet use the structural MRI to
-extract regional PET data. We first need to register the PET image to the
+extract regional PET data. We first need to register the PET image to the MRI.
 
 ### Coregister PET to T1-weighted MRI. 
 **Caution: SPM will overwrite the transformation matrix in
-the Source Image and Other Image! As such, we will first create a safe copy of our SUM and 4D
-images before running the Coregistration module).**
+the Source Image and Other Image! As such, we will first create a safe copy 
+of our SUM and 4D images before running the Coregistration module).**
 
 1. Create copies of the smoothed late-frame SUM image and the 4D pib image.
    a. In the terminal, create a new directory called “safe” in your working directory.
@@ -275,7 +290,7 @@ images before running the Coregistration module).**
 directory using the cp command in the terminal.
 
         ```bash
-        cp ssub001_pib_SUM50-70min.nii safe/ ssub001_pib_SUM50-70min.nii
+        cp ssub001_pib_SUM50-70min.nii safe/ssub001_pib_SUM50-70min.nii
         ```
 1. Open the Coregistration module by selecting `Coregister (Est & Res)` from the Spatial pre-
 processing drop down. This function will estimate the parameters needed to align the
@@ -296,7 +311,8 @@ Images”
 
 ### Review registration results
 1. In FSL, remove all of the loaded images using the Overlay>Remove All command.
-1. Open the T1-weighted MRI and the resliced registered SUM PET image `rssub001_pib_SUM50-70min.nii` in FSLeyes.
+1. Open the T1-weighted MRI and the resliced registered SUM PET image 
+`rssub001_pib_SUM50-70min.nii` in FSLeyes.
 1. Select the SUM image. Select the `Hot [Brain colours]` colormap for the SUM PET
 image and set the min to 0 and max to 25,000.
 1. Use the opacity slider to make the SUM PET image ~50% translucent.
@@ -317,7 +333,8 @@ matrix parameters have changed to reflect the spatial transformation needed to
 align the PET image to the T1-weighted MRI. This allows a viewer to show the
 PET image aligned to the T1-w image in world coordinates without having to
 alter the image matrix.
-1. Now compare the image headers for the resliced SUM image `rssub001_pib_SUM50-70min.nii` with the T1-weighted MRI. The matrix size
+1. Now compare the image headers for the resliced SUM image 
+`rssub001_pib_SUM50-70min.nii` with the T1-weighted MRI. The matrix size
 and sform matrix should be identical. This is because SPM resliced the PET
 image matrix such that the image matrix itself now aligns with the T1-weighted
 MRI, and thus no transformation in the header is needed to align the images in
@@ -360,14 +377,19 @@ using fslstats
     fslstats rssub001_pib_SUM50-70min.nii -k rsub001_cblm_mask.nii -M
     ```
     ```output
-    TODO: add output
+    # The value you get from this command will be slightly different
+    # from what is below. Use this value for the {ROI mean} in the nex command.
+    5795.161909
     ```
 1. Create the SUVR image by dividing the SUM 50-70min image by the mean activity
 concentration output by `fslstats`
 
-    ```bash
-    fslmaths rssub001_pib_SUM50-70min.nii -div {ROI mean} rssub001_pib_SUVR50-70min.nii
-    ```
+   ```bash
+   fslmaths rssub001_pib_SUM50-70min.nii -div {ROI mean} rssub001_pib_SUVR50-70min.nii
+   ```
+
+   In this command replace `{ROI mean}` with the value that you got in the
+   `fslstats` command. 
 
 ### View the SUVR image overlayed on the T1-w MRI
 1. Open the T1-weighted MRI (if not already opened) and the newly created pib SUVR
