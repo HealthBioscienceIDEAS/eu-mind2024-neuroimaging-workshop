@@ -13,7 +13,19 @@
     <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/aio.html</loc>
   </url>
   <url>
+    <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/command-line.html</loc>
+  </url>
+  <url>
+    <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/diffusion-weighted-imaging.html</loc>
+  </url>
+  <url>
+    <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/functional-mri.html</loc>
+  </url>
+  <url>
     <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/images.html</loc>
+  </url>
+  <url>
+    <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/imaging-data-structure-and-formats.html</loc>
   </url>
   <url>
     <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/index.html</loc>
@@ -31,7 +43,19 @@
     <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/instructor/aio.html</loc>
   </url>
   <url>
+    <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/instructor/command-line.html</loc>
+  </url>
+  <url>
+    <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/instructor/diffusion-weighted-imaging.html</loc>
+  </url>
+  <url>
+    <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/instructor/functional-mri.html</loc>
+  </url>
+  <url>
     <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/instructor/images.html</loc>
+  </url>
+  <url>
+    <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/instructor/imaging-data-structure-and-formats.html</loc>
   </url>
   <url>
     <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/instructor/index.html</loc>
@@ -46,10 +70,16 @@
     <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/instructor/key-points.html</loc>
   </url>
   <url>
+    <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/instructor/pet-imaging.html</loc>
+  </url>
+  <url>
     <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/instructor/structural-mri.html</loc>
   </url>
   <url>
     <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/instructor-notes.html</loc>
@@ -61,9 +91,15 @@
     <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/key-points.html</loc>
   </url>
   <url>
+    <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/pet-imaging.html</loc>
+  </url>
+  <url>
     <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/profiles.html</loc>
   </url>
   <url>
     <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/structural-mri.html</loc>
   </url>
 </urlset>
