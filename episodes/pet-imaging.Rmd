@@ -420,6 +420,8 @@ Compare the DVR image with the SUVR image you created in the tutorial.
 
 :::::::::::::::::::: hint
 Pay close attention to the display settings for the window and colormap.
+
+Or try using the `&` command to put these commands in the background!
 ::::::::::::::::::::
 ::::::::::::::::::::
 
