@@ -37,7 +37,7 @@ Data can be found in the folder `oasis/fMRI_tutorial_orig`
 First, let's go into the directory where the functional data are!
 
 ```bash
-cd   data/FunctionalMRI 
+cd   ~/data/FunctionalMRI 
 ```
 
 Now go into the subject folder and list the content to have an idea of what data we are going to use. 
@@ -95,15 +95,26 @@ To have an idea of how the raw data looks before any pre-processing is performed
 To do so, `fsleyes` is a great toolbox that can be used by typing on the command line: 
 
 ```bash 
-fsleyes func/sub-OAS30015_task-rest_run-01_bold.nii.gz &
+fsleyes -ms func/sub-OAS30015_task-rest_run-01_bold.nii.gz &
 ```
 
-As mentioned in the [imaging data](./imaging-data-structure-and-formats.Rmd) section, the `&` at the end of the command allows us to keep working on the command line while having a graphical application (such as `fsleyes`) opened. Helpful options for reviewing fMRI data in fsleyes are the movie option ( ![](fig/movie_icon.png){alt="movie" height='24px'} ) and the timeseries option (-> view -> timeseries or keyboard shortcut &#8984;-3). Check them out!
+The `-ms` option is helpful as it makes viewing using the movie mode much better.
+
+As mentioned in the [imaging data](./imaging-data-structure-and-formats.Rmd) 
+section, the `&` at the end of the command allows us to keep working on the 
+command line while having a graphical application (such as `fsleyes`) opened. 
+Helpful options for reviewing fMRI data in fsleyes are the movie option 
+( ![](fig/movie_icon.png){alt="movie" height='24px'} ) and the timeseries 
+  option (-> view -> timeseries or keyboard shortcut &#8984;-3). Check them out!
 
 
 ### EPI Distortion Correction
 
-Some parts of the brain can appear distorted depending on their magnetic properties. One common way to correct the distortions with fMRI data is by acquiring one volume with an opposite phase-encoding direction, and merging the two types of images running [TOPUP](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/topup). In this dataset we don’t have the data required for TOPUP so we will skip this step.
+Some parts of the brain can appear distorted depending on their magnetic 
+properties. One common way to correct the distortions with fMRI data is by 
+acquiring one volume with an opposite phase-encoding direction, and merging the
+two types of images running [TOPUP](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/topup). 
+In this dataset we don’t have the data required for TOPUP so we will skip this step.
 *Note however that you should run it if your data allows.*
 
 ### Preliminary steps

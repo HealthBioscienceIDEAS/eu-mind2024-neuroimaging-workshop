@@ -38,7 +38,9 @@ We are going to be working in the DiffusionMRI subfolder under data in your home
 From the previous lessons, you learned how to view and navigate images, let's first look at the raw data, which can all be found under `~/data/DiffusionMRI/sourcedata`.
 
 To go to this directory using the terminal, use the command `cd` to change directory. 
-Type `cd  ~/data/DiffusionMRI/sourcedata` to go this directory.
+```bash
+cd  ~/data/DiffusionMRI/sourcedata
+```
 
 Let's inspect what each participant's dwi directory should contain: 
 ```bash
@@ -65,7 +67,7 @@ Let's look at those files:
 cd sub-OAS30001/dwi
 
 ## Image file
-fsleyes sub-OAS30001_dwi.nii.gz
+fsleyes -ms sub-OAS30001_dwi.nii.gz &
  
 ## Text files
 cat sub-OAS30001_dwi.bval
@@ -130,7 +132,7 @@ First select the b0 image, extract the brain only and binarize it to make a mask
 * Load the mask you just created to make sure it is adequate!
 
    ```bash
-   fsleyes sub-OAS30001_b0_bet_mask.nii.gz
+   fsleyes sub-OAS30001_b0_bet_mask.nii.gz &
    ```
 
 ### 2. Correcting for susceptibility-induced distortions
@@ -368,7 +370,7 @@ We generated outputs using the two methods (cluster based threshold of TFCE), wh
 
 Here is one example of how you can overlay different outputs images to visualize results.
 ```bash
-fsleyes -std1mm mean_FA_skeleton -cm green -dr .3 .7 tbss_tstat1 -cm red-yellow -dr 1.5 3 tbss_clustere_corrp_tstat1 -cm blue-lightblue -dr 0.90 1
+fsleyes -std1mm mean_FA_skeleton -cm green -dr .3 .7 tbss_tstat1 -cm red-yellow -dr 1.5 3 & tbss_clustere_corrp_tstat1 -cm blue-lightblue -dr 0.90 1
 ```
 This will display the standard MNI brain, the average FA skeleton used for TBSS, the t-map for contrast 1 and the p-value maps after cluster-based thresholding.
 *Note that I am thresholding the latter from 0.90 to 1 since we have weak results in this example; this will show voxels where CU have greater FA than AD patients from p=0.10.*

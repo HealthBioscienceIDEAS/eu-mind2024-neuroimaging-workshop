@@ -59,7 +59,12 @@ contact: 'd.cash@ucl.ac.uk'
 
 # Order of episodes in your lesson
 episodes:
-- introduction.Rmd
+- imaging-data-structure-and-formats.Rmd
+- structural-mri.Rmd
+- pet-imaging.Rmd
+- diffusion-weighted-imaging.Rmd
+- functional-mri.Rmd
+- command-line.Rmd
 
 # Information for Learners
 learners:
