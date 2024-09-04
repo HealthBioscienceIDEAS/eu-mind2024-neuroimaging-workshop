@@ -23,6 +23,12 @@ pre-processing steps for fMRI, DTI, and PET. The objective of the workshop is to
 participants gain an in-depth appreciation of commonly used interpretive 
 clinical and or research applications for each methodology. 
 
+These lessons are supported as part of the [Health and Biosciences IDEAS](https://healthbioscienceideas.github.io)  training initiative funded by [UKRI Innovation Scholars](https://www.ukri.org/opportunity/innovation-scholars-data-science-training-in-health-bioscience/) (MR/V03863X/1)
+
+This workshop has been supported by a grant from the Alzheimer's Association (IGPCC-D-1329693)
+and funding from [Fondacion Alzheimer](https://www.fondation-alzheimer.org/).
+
+
 ### Target Audience
 This hands-on workshop can serve as a beginner or refresher course for 
 established investigators, clinicians, and trainees involved in using imaging 
