@@ -42,6 +42,12 @@ format. In this practical we will work with data that have already been
 converted to NIfTI, but many tools for such conversions are available (for 
 example [dcm2niix](https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage)).
 
+:::::::::::::::::::::: discussion
+If you are interested in trying out converting DICOM data to Nifti, we have some 
+sample DICOM data for you. Please see the [bonus exercise](#) at the end of this lesson
+if you would like to give this a go.
+::::::::::::::::::::::
+
 ### Viewing image properties - fslhd and fslinfo
 These tools enable various properties of an image to be viewed.
 
@@ -772,6 +778,56 @@ brain lesions – white matter hyperintensities – are more clearly visible
   
 :::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::: challenge
+### BONUS EXERCISE: DICOM to NIfTI
+As discussed earlier, if you have received medical imaging data from a hosptial it is likely in 
+DICOM format. However, most of the software you are likely to use wants medical images in a 
+more manageable format, typically NIfTI images. There are many ways to convert between the two,
+but probably the most widely used is [dcm2niix](https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage)).
+You can find the sample data in `~/data/ImageDataVisualization/DICOM`
+Let's first change into this directory
+```bash
+cd data/ImageDataVisualization/DICOM
+```
+If you list the contents, you will see a single folder called `Subject01`
+
+Let's first make a directory for the Nifti output
+```bash
+mkdir Nifti
+```
+
+1. How do we know how to use this command?
+2. Construct a command to convert the images and put them in the directory `mkdir data/ImageDataVisualization/DICOM/Subject01/Nifti`
+3. Figure out what option to use to store a compressed gzipped-version of the NIfTI file.
+4. Try out some different options to make the name easier to manage.
+5. Look at the converted NIfTI images in `fsleyes`. What modalities are they?
+
+::::::::::::::::::::: hint
+We covered how to get help for a command in an earlier section.
+:::::::::::::::::::::
+
+::::::::::::::::::::: solution
+1. To get help, we use the -h option:
+    ```bash
+    dcm2niix -h
+    ```
+2. The simplest command to do this is 
+   ```bash
+   dcm2niix -o Nifti Subject01
+   ```
+3. To zip the file, we use the -z function:
+   ```bash
+   dcm2niix -z y -o Nifti Subject01
+   ```
+4. TO change the naming structure, we use the -f function. How you name them 
+tends to be your personal choice, and many people choose to use the BIDS
+standard for naming the data. 
+   ```bash
+   dcm2niix -f %i_%s_%d -z y -o Nifti Subject01
+   ```
+:::::::::::::::::::::
+:::::::::::::::::::::
 
 In the [next episode on structural MRI](structural-mri.Rmd), we will learn how 
 to align (register) the two images together to be able to look at the same 
