@@ -280,7 +280,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Imaging Data: Structure And Formats</h1>
-        <p>Last updated on 2024-09-20 |
+        <p>Last updated on 2024-09-23 |
 
         <a href="https://github.com/davecash75/eu-mind2024-neuroimaging-workshop/edit/main/episodes/imaging-data-structure-and-formats.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -350,9 +350,8 @@ for such conversions are available (for example <a href="https://www.nitrc.org/p
 <h3 class="callout-title">Discussion</h3>
 <div class="callout-content">
 <p>If you are interested in trying out converting DICOM data to Nifti,
-we have some sample DICOM data for you. Please see the <a href="#">bonus
-exercise</a> at the end of this lesson if you would like to give this a
-go.</p>
+we have some sample DICOM data for you. Please see the <a href="#bonus_dicom">bonus exercise</a> at the end of this lesson if you
+would like to give this a go.</p>
 </div>
 </div>
 </div>
@@ -392,7 +391,7 @@ you a list of the files in this directory.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Need help? </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>If you are in general unfamiliar with how to use the command line,
 then we suggest you glance over this <a href="./command-line.html">[additional tutorial]</a>.</p>
@@ -489,7 +488,7 @@ structured. Type the following command:</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Let’s look at the output </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -576,7 +575,7 @@ aux_file	OAS30015_MR_d2004</code></pre>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
   <h3 class="accordion-header" id="headingSpoiler3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Let’s look at the output </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1086,7 +1085,7 @@ right).</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Here are the screenshots you should see: <img src="fig/aic_imdata_fsl_lthal.png" alt="Left Thalamus" width="800" class="figure"></p>
 <figure><img src="fig/aic_imdata_fsl_rthal.png" alt="Right Thalamus" width="800" class="figure mx-auto d-block"></figure></div>
@@ -1140,7 +1139,7 @@ which are more visible on FLAIR?</em></li>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <ul><li>Use <code>fslhd</code> to get information on dimension and voxel
 size.</li>
@@ -1155,7 +1154,7 @@ orientation</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p><em>Do the T1 and the FLAIR have the same dimension?</em></p>
 <p><strong>No</strong>-Using <code>fslhd</code>, we can see that the
@@ -1180,18 +1179,12 @@ visible</p>
 </div>
 </div>
 </div>
-<div id="bonus-exercise-dicom-to-nifti" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="bonus-exercise-dicom-to-nifti" class="callout-inner">
-<h3 class="callout-title">BONUS EXERCISE: DICOM to NIfTI</h3>
-<div class="callout-content">
-<p>As discussed earlier, if you have received medical imaging data from
-a hosptial it is likely in DICOM format. However, most of the software
-you are likely to use wants medical images in a more manageable format,
-typically NIfTI images. There are many ways to convert between the two,
-but probably the most widely used is <a href="https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage" class="external-link">dcm2niix</a>).
+<p><a id="bonus_dicom"></a> ::::::::::::::::::::: challenge ### BONUS
+EXERCISE: DICOM to NIfTI As discussed earlier, if you have received
+medical imaging data from a hosptial it is likely in DICOM format.
+However, most of the software you are likely to use wants medical images
+in a more manageable format, typically NIfTI images. There are many ways
+to convert between the two, but probably the most widely used is <a href="https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage" class="external-link">dcm2niix</a>).
 You can find the sample data in
 <code>~/data/ImageDataVisualization/DICOM</code> Let’s first change into
 this directory</p>
@@ -1211,7 +1204,7 @@ this directory</p>
 <ol style="list-style-type: decimal"><li>How do we know how to use this command?</li>
 <li>Construct a command to convert the images and put them in the
 directory
-<code>mkdir data/ImageDataVisualization/DICOM/Subject01/Nifti</code>
+<code>data/ImageDataVisualization/DICOM/Subject01/Nifti</code>
 </li>
 <li>Figure out what option to use to store a compressed gzipped-version
 of the NIfTI file.</li>
@@ -1219,15 +1212,12 @@ of the NIfTI file.</li>
 manage.</li>
 <li>Look at the converted NIfTI images in <code>fsleyes</code>. What
 modalities are they?</li>
-</ol></div>
-</div>
-</div>
-<div id="accordionHint2" class="accordion challenge-accordion accordion-flush">
+</ol><div id="accordionHint2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
   <h4 class="accordion-header" id="headingHint2"> Give me a hint </h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
 <div class="accordion-body">
 <p>We covered how to get help for a command in an earlier section.</p>
 </div>
@@ -1239,7 +1229,7 @@ modalities are they?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>To get help, we use the -h option:
 <code>bash     dcm2niix -h</code></p></li>
@@ -1273,6 +1263,7 @@ use the BIDS standard for naming the data.</p>
 </div>
 </div>
 </div>
+<p>:::::::::::::::::::::</p>
 <p>In the <a href="structural-mri.html">next episode on structural
 MRI</a>, we will learn how to align (register) the two images together
 to be able to look at the same point in the brain in both images.</p>
@@ -1371,8 +1362,8 @@ any links that you are not going to use.
   "url": "https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/imaging-data-structure-and-formats.html",
   "identifier": "https://davecash75.github.io/eu-mind2024-neuroimaging-workshop/imaging-data-structure-and-formats.html",
   "dateCreated": "2024-08-16",
-  "dateModified": "2024-09-20",
-  "datePublished": "2024-09-20"
+  "dateModified": "2024-09-23",
+  "datePublished": "2024-09-23"
 }
 
   </script><script>
