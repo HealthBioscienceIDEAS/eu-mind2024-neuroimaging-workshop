@@ -44,7 +44,7 @@ example [dcm2niix](https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPag
 
 :::::::::::::::::::::: discussion
 If you are interested in trying out converting DICOM data to Nifti, we have some 
-sample DICOM data for you. Please see the [bonus exercise](#) at the end of this lesson
+sample DICOM data for you. Please see the [bonus exercise](#bonus_dicom) at the end of this lesson
 if you would like to give this a go.
 ::::::::::::::::::::::
 
@@ -779,6 +779,7 @@ brain lesions – white matter hyperintensities – are more clearly visible
 :::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::
 
+<a id="bonus_dicom"></a>
 ::::::::::::::::::::: challenge
 ### BONUS EXERCISE: DICOM to NIfTI
 As discussed earlier, if you have received medical imaging data from a hosptial it is likely in 
@@ -798,7 +799,7 @@ mkdir Nifti
 ```
 
 1. How do we know how to use this command?
-2. Construct a command to convert the images and put them in the directory `mkdir data/ImageDataVisualization/DICOM/Subject01/Nifti`
+2. Construct a command to convert the images and put them in the directory `data/ImageDataVisualization/DICOM/Subject01/Nifti`
 3. Figure out what option to use to store a compressed gzipped-version of the NIfTI file.
 4. Try out some different options to make the name easier to manage.
 5. Look at the converted NIfTI images in `fsleyes`. What modalities are they?
