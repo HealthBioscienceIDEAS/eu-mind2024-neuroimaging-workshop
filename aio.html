@@ -381,8 +381,8 @@ for such conversions are available (for example <a href="https://www.nitrc.org/p
 <h3 class="callout-title">Discussion</h3>
 <div class="callout-content">
 <p>If you are interested in trying out converting DICOM data to Nifti,
-we have some sample DICOM data for you. Please see the <a href="#bonus_dicom">bonus exercise</a> at the end of this lesson if you
-would like to give this a go.</p>
+we have some sample DICOM data for you. Please see the <a href="#bonus-exercise-dicom-to-nifti">bonus exercise</a> at the end of
+this lesson if you would like to give this a go.</p>
 </div>
 </div>
 </div>
@@ -1284,14 +1284,14 @@ EXERCISE: DICOM to NIfTI As discussed earlier, if you have received
 medical imaging data from a hosptial it is likely in DICOM format.
 However, most of the software you are likely to use wants medical images
 in a more manageable format, typically NIfTI images. There are many ways
-to convert between the two, but probably the most widely used is <a href="https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage" class="external-link">dcm2niix</a>).
-You can find the sample data in
-<code>~/data/ImageDataVisualization/DICOM</code> Let’s first change into
-this directory</p>
+to convert between the two, but probably the most widely used is <a href="https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage" class="external-link">dcm2niix</a>).</p>
+<p>You can find the sample data in
+<code>~/data/ImageDataVisualization/DICOM</code>. Let’s first change
+into this directory</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="bu">cd</span> data/ImageDataVisualization/DICOM</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="bu">cd</span> ~/data/ImageDataVisualization/DICOM</span></code></pre>
 </div>
 <p>If you list the contents, you will see a single folder called
 <code>Subject01</code></p>
@@ -1334,32 +1334,38 @@ modalities are they?</li>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
-<li><p>To get help, we use the -h option:
-<code>bash     dcm2niix -h</code></p></li>
 <li>
-<p>The simplest command to do this is</p>
+<p>To get help, we use the -h option:</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-o</span> Nifti Subject01</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-h</span></span></code></pre>
+</div>
+</li>
+<li>
+<p>The simplest command to do this is</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-o</span> Nifti Subject01</span></code></pre>
 </div>
 </li>
 <li>
 <p>To zip the file, we use the -z function:</p>
-<div class="codewrapper sourceCode" id="cb16">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-z</span> y <span class="at">-o</span> Nifti Subject01</span></code></pre>
-</div>
-</li>
-<li>
-<p>TO change the naming structure, we use the -f function. How you
-name them tends to be your personal choice, and many people choose to
-use the BIDS standard for naming the data.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-f</span> %i_%s_%d <span class="at">-z</span> y <span class="at">-o</span> Nifti Subject01</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-z</span> y <span class="at">-o</span> Nifti Subject01</span></code></pre>
+</div>
+</li>
+<li>
+<p>To change the naming structure, we use the -f function. How you
+name them tends to be your personal choice, and many people choose to
+use the BIDS standard for naming the data.</p>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-f</span> %i_%s_%d <span class="at">-z</span> y <span class="at">-o</span> Nifti Subject01</span></code></pre>
 </div>
 </li>
 </ol>
@@ -1597,7 +1603,7 @@ finished.</p></li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Reproducing your work </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>When you are using these workflows for your actual research, we
 <strong>highly recommend</strong> that you save the SPM pipelines so
@@ -1713,7 +1719,7 @@ and CSF in the T1 weighted image correctly?</em></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>You should have an output that looks something like this. <img src="fig/aic_smri_tissue_seg_check.png" alt="Tissue segmentation check" class="figure"></p>
 </div>
@@ -1904,7 +1910,7 @@ more structural imaging data, please try the exercises below.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2214,7 +2220,7 @@ type the following into the terminal:</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Open up multiple terminal windows to view the .json file contents
 side-by-side.</p>
@@ -2725,7 +2731,7 @@ SUVR image you created in the tutorial.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
   <h4 class="accordion-header" id="headingHint2"> Give me a hint </h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
 <div class="accordion-body">
 <p>Pay close attention to the display settings for the window and
 colormap.</p>
@@ -2754,7 +2760,7 @@ a SUVR image for the MK-6240 scan.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint3" aria-expanded="false" aria-controls="collapseHint3">
   <h4 class="accordion-header" id="headingHint3"> Give me a hint </h4>
 </button>
-<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
+<div id="collapseHint3" class="accordion-collapse collapse" data-bs-parent="#accordionHint3" aria-labelledby="headingHint3">
 <div class="accordion-body">
 <p>You’ll need to look at the .json file for the TAU PET NIfTI file -
 this will contain key information around timing and framing so that you
@@ -4407,7 +4413,7 @@ files.</p>
   That just flew off the screen!
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Using <code>cat</code> on a large text file can end up looking
 impressive as text swarms all over your terminal, but it can be hard to

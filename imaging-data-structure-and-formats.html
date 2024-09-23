@@ -350,8 +350,8 @@ for such conversions are available (for example <a href="https://www.nitrc.org/p
 <h3 class="callout-title">Discussion</h3>
 <div class="callout-content">
 <p>If you are interested in trying out converting DICOM data to Nifti,
-we have some sample DICOM data for you. Please see the <a href="#bonus_dicom">bonus exercise</a> at the end of this lesson if you
-would like to give this a go.</p>
+we have some sample DICOM data for you. Please see the <a href="#bonus-exercise-dicom-to-nifti">bonus exercise</a> at the end of
+this lesson if you would like to give this a go.</p>
 </div>
 </div>
 </div>
@@ -1184,14 +1184,14 @@ EXERCISE: DICOM to NIfTI As discussed earlier, if you have received
 medical imaging data from a hosptial it is likely in DICOM format.
 However, most of the software you are likely to use wants medical images
 in a more manageable format, typically NIfTI images. There are many ways
-to convert between the two, but probably the most widely used is <a href="https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage" class="external-link">dcm2niix</a>).
-You can find the sample data in
-<code>~/data/ImageDataVisualization/DICOM</code> Let’s first change into
-this directory</p>
+to convert between the two, but probably the most widely used is <a href="https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage" class="external-link">dcm2niix</a>).</p>
+<p>You can find the sample data in
+<code>~/data/ImageDataVisualization/DICOM</code>. Let’s first change
+into this directory</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="bu">cd</span> data/ImageDataVisualization/DICOM</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="bu">cd</span> ~/data/ImageDataVisualization/DICOM</span></code></pre>
 </div>
 <p>If you list the contents, you will see a single folder called
 <code>Subject01</code></p>
@@ -1231,32 +1231,38 @@ modalities are they?</li>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li><p>To get help, we use the -h option:
-<code>bash     dcm2niix -h</code></p></li>
-<li>
-<p>The simplest command to do this is</p>
+<ol style="list-style-type: decimal"><li>
+<p>To get help, we use the -h option:</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-o</span> Nifti Subject01</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-h</span></span></code></pre>
+</div>
+</li>
+<li>
+<p>The simplest command to do this is</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-o</span> Nifti Subject01</span></code></pre>
 </div>
 </li>
 <li>
 <p>To zip the file, we use the -z function:</p>
-<div class="codewrapper sourceCode" id="cb16">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-z</span> y <span class="at">-o</span> Nifti Subject01</span></code></pre>
-</div>
-</li>
-<li>
-<p>TO change the naming structure, we use the -f function. How you
-name them tends to be your personal choice, and many people choose to
-use the BIDS standard for naming the data.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-f</span> %i_%s_%d <span class="at">-z</span> y <span class="at">-o</span> Nifti Subject01</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-z</span> y <span class="at">-o</span> Nifti Subject01</span></code></pre>
+</div>
+</li>
+<li>
+<p>To change the naming structure, we use the -f function. How you
+name them tends to be your personal choice, and many people choose to
+use the BIDS standard for naming the data.</p>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-f</span> %i_%s_%d <span class="at">-z</span> y <span class="at">-o</span> Nifti Subject01</span></code></pre>
 </div>
 </li>
 </ol></div>
