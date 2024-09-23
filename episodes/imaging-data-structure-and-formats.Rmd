@@ -779,7 +779,6 @@ brain lesions – white matter hyperintensities – are more clearly visible
 :::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::
 
-<a id="bonus_dicom"></a>
 ::::::::::::::::::::: challenge
 
 ### BONUS EXERCISE: DICOM to NIfTI
