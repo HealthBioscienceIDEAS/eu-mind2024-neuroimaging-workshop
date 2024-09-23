@@ -781,7 +781,9 @@ brain lesions – white matter hyperintensities – are more clearly visible
 
 <a id="bonus_dicom"></a>
 ::::::::::::::::::::: challenge
+
 ### BONUS EXERCISE: DICOM to NIfTI
+
 As discussed earlier, if you have received medical imaging data from a hosptial it is likely in 
 DICOM format. However, most of the software you are likely to use wants medical images in a 
 more manageable format, typically NIfTI images. There are many ways to convert between the two,
