@@ -1296,11 +1296,13 @@ visible</p>
 </div>
 </div>
 </div>
-<p><a id="bonus_dicom"></a> ::::::::::::::::::::: challenge</p>
+<div id="bonus-exercise-dicom-to-nifti" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<div class="section level3">
-<h3 id="bonus-exercise-dicom-to-nifti">BONUS EXERCISE: DICOM to NIfTI<a class="anchor" aria-label="anchor" href="#bonus-exercise-dicom-to-nifti"></a>
-</h3>
+<div id="bonus-exercise-dicom-to-nifti" class="callout-inner">
+<h3 class="callout-title">BONUS EXERCISE: DICOM to NIfTI</h3>
+<div class="callout-content">
 <p>As discussed earlier, if you have received medical imaging data from
 a hosptial it is likely in DICOM format. However, most of the software
 you are likely to use wants medical images in a more manageable format,
@@ -1335,6 +1337,9 @@ manage.</li>
 <li>Look at the converted NIfTI images in <code>fsleyes</code>. What
 modalities are they?</li>
 </ol>
+</div>
+</div>
+</div>
 <div id="accordionHint2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
@@ -1394,7 +1399,6 @@ use the BIDS standard for naming the data.</p>
 </div>
 </div>
 </div>
-<p>:::::::::::::::::::::</p>
 <p>In the <a href="structural-mri.html">next episode on structural
 MRI</a>, we will learn how to align (register) the two images together
 to be able to look at the same point in the brain in both images.</p>
@@ -1625,7 +1629,7 @@ finished.</p></li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Reproducing your work </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>When you are using these workflows for your actual research, we
 <strong>highly recommend</strong> that you save the SPM pipelines so
@@ -1741,7 +1745,7 @@ and CSF in the T1 weighted image correctly?</em></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>You should have an output that looks something like this. <img src="../fig/aic_smri_tissue_seg_check.png" alt="Tissue segmentation check" class="figure"></p>
 </div>
@@ -1932,7 +1936,7 @@ more structural imaging data, please try the exercises below.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3179,7 +3183,7 @@ relying on data organized according to the BIDS structure.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> The command should show the following content </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <figure><img src="../fig/bval_bvec.png" alt="example of bval and bvec file" class="figure mx-auto d-block"></figure><ul>
 <li>The nifti file is a 4D file of all the directions acquired.</li>
@@ -3209,7 +3213,7 @@ file. How can you know how many directions it contains?</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Refer to the <a href="imaging-data-structure-and-formats.html">Getting started
 session</a> for more details!</p>
@@ -3222,7 +3226,7 @@ session</a> for more details!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>There is 1 b0 image and 64 gradient images! You can check for the
 maximum number as you move through the “Volume” box as shown below.</p>
